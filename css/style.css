@@ -19,7 +19,9 @@
 	--logo-down-color: #ffffff;
 	--address-color: #ffffff;
 	--address-secondary-color: rgba(255, 255, 255, 0.6);
+    --animation-duration: 250ms, 
 }
+
   /* Общее */
 body {
 	color: var(--primary-text-color);
@@ -47,19 +49,18 @@ ul { list-style: none; }
   /* заголовки */
 .titel {
 	color: var(--titel-link-color);
-
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 1.17;
 	text-align: center;
 	font-Family: "Roboto",
 }
-
 .hidden {
 	display: none;
 }
 
-  /* контейнер */
+
+  /* DIV CONTAINER (BODY) */
 .container {
 	margin-right: auto;
 	margin-left: auto;
@@ -68,19 +69,16 @@ ul { list-style: none; }
 	padding-right: 15px;
 }
 
-  /* Шапка сайта */
+  /* Шапка сайта (header) */
+
 .header {
 	border-bottom: 1px solid #ececec;
 }
-
 .item:hover:after,
 .item:active:after,
 .item:hover:focus{
 	width: 100%;
-
 }
-
-
 
 .header > .container {
 	display: flex;
@@ -119,7 +117,7 @@ ul { list-style: none; }
 	color: var(--accent-color);
 }
 
-  /* Навигация сайта */
+  /* Основная навигация (header) */
 .nav > .list .link {
 	display: block;
 	padding-top: 32px;
@@ -131,9 +129,7 @@ ul { list-style: none; }
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 	
-	transition-property: color; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav > .list > .item:not(:last-child) {
@@ -152,7 +148,7 @@ ul { list-style: none; }
 	
 }
 
-  /* подчеркивание  */
+  /* Эфект подчеркивания навигации (header)  */
 .nav > .list .link.current::after {
 	content: "";
 
@@ -182,16 +178,15 @@ ul { list-style: none; }
 	border-radius: 2px;
 	opacity: 0;
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
-
 .nav > .list .link:hover::before{
 	display: block;
 	opacity: 1;
-	background-color: #2196F3;
+	background-color: var(--accent-color)
 }
 
-  /* контакты */
+  /* Контакты (header) */
+
 .contacts.list {
 	display: flex;
 	align-items: center;
@@ -208,7 +203,7 @@ ul { list-style: none; }
 	margin-right: 10px;
 	
 }
-.icom-tel::before{
+.icon-tel::before{
 	display: block;
 	content: "";
 	height: 16px;
@@ -235,25 +230,25 @@ ul { list-style: none; }
 	justify-content: center;
 	padding-top: 32px;
 	padding-bottom: 32px;
+	margin-right: 30px;
+
 	color: var(--secondary-link-color);
     fill: #757575;
+	color: var(--primary-text-color);
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 
-	transition-property: color, fill; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	
 }
 .contacts-item{
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	
 }
-
 .contacts .link:hover,
 .contacts .link:active,
 .contacts .link:focus {
@@ -267,7 +262,7 @@ ul { list-style: none; }
 	display: block;
 	margin: 0px auto;
 	padding: 200px 0;
-	width: 1600px;
+	
 	height: 600px;
 	margin-right: auto;
 	margin-left: auto;
@@ -276,6 +271,19 @@ ul { list-style: none; }
 	max-width: 1600px;
 	background-image: linear-gradient(to right,rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), url(../images/Gradient.jpg);
 }
+.hero-titel {
+	margin-top: 0px;
+	margin-bottom: 30px;
+
+	color: var(--primary-bg-color);
+
+	font-weight: 900;
+	font-size: 44px;
+	line-height: 1.36;
+	text-align: center;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
 
 .hero > .container {
 	display: flex;
@@ -283,7 +291,6 @@ ul { list-style: none; }
 	align-items: center;
 	justify-content: center;
 }
-
 
 .button-hero {
 	display: block;
@@ -301,33 +308,18 @@ ul { list-style: none; }
 	line-height: 1.87;
 	letter-spacing: 0.06em;
 
-	transition-property: background-color, color; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color, color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .button-hero:hover,
 .button-hero:focus {
 	color: var(--accent-color);
 	background-color: var(--primary-bg-color);
-
 }
 
-.hero-titel {
-	margin-top: 0px;
-	margin-bottom: 30px;
 
-	color: var(--primary-bg-color);
-
-	font-weight: 900;
-	font-size: 44px;
-	line-height: 1.36;
-	text-align: center;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
-}
-
-  /* Модалка */
+/* Окно информации пользователя*/
 .backdrop{
 	position: fixed;
 	top: 0;
@@ -336,6 +328,7 @@ ul { list-style: none; }
 	height: 100%;
 	background-color:  rgba(0, 0, 0, 0.20);
 	opacity: 1;
+
 	transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
@@ -349,7 +342,7 @@ ul { list-style: none; }
 	opacity: 0;
 	pointer-events: none;
 }
-  /*-------------------------------------------- */
+
 .title-form{
 	text-align: center;
 	font-weight: 700;
@@ -381,7 +374,7 @@ textarea{
 
 
 
-	background-color: #FFFFFF;
+	background-color: var(--primary-bg-color);
 	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 	
 }
@@ -423,11 +416,9 @@ textarea{
 	border: 1px solid rgba(33, 33, 33, 0.20);
 	padding: 12px 16px;
 	outline-color: #2196F3;
+
 	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
-
-
-
 
 .form-comment textarea:hover,
 .form-comment textarea:focus{
@@ -461,9 +452,6 @@ textarea{
 	color: (117, 117, 117, 0.50);
 }
 
-
-
-
 .button-form{
 	display: block;
 	width: 200px;
@@ -479,9 +467,10 @@ textarea{
 	
     outline-color: #2196F3;
 	background: #188CE8;
-	color: #FFFFFF;
+	color:var(--primary-bg-color);
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-	transition: color, background-color, transform  250ms cubic-bezier(0.4, 0, 0.2, 1)
+
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-container{
@@ -492,20 +481,12 @@ textarea{
 	padding: 0;
 }
 
-
-
-
-
-
 .button-form:hover,
 .button-form:focus{
 	color: #ffffff;
 	background-color: #1976d2;
 	transform: scale(1.03);
 }
-
-
-
 
 .form-agreement{
 	display: block;
@@ -523,21 +504,18 @@ textarea{
 	height: 18px;
 }
 
-
-
-
 .position-icon:hover,
 .position-icon:active,
 .position-icon:focus{
 	fill: #2196F3;
 }
-
 .position-icon{
 	display: flex;
 	flex-direction: column;
     background-color: #FFFFFF;
 	position: relative;
 	fill: #212121;
+	
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -580,7 +558,6 @@ textarea{
 	text-decoration: underline;
 }
 
-  /*-------------------------------------------- */
 .modal{
 	display: flex;
 	flex-direction: column;
@@ -619,31 +596,27 @@ textarea{
 	background-color: #FFFFFF;
     cursor: pointer;
 
-	transition: color, border, transform  250ms cubic-bezier(0.4, 0, 0.2, 1)
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	
 }
-
 
 .button-close:hover,
 .button-close:focus{
 	fill:  #2196f3;
 	transform: scale(1.3);
 }
-
 .close-icon{
 	width: 18px;
 	height: 18px;
-
 }
   /* Блок Наши приимущества */
+
 .advantages {
 	margin-bottom: 94px;
 }
-
 .advantages > .container > .list {
 	display: flex;
 }
-
 .advantages .titel {
 	margin-top: 30px;
 	margin-bottom: 10px;
@@ -667,7 +640,6 @@ textarea{
 	margin-top: 0px;
 }
 
-
 .advantages-svg{
 	display: flex;
 	align-items: center;
@@ -676,23 +648,18 @@ textarea{
 	width: 270px;
 	height: 120px;
 }
-
 .advantages .list-item > .text {
 	margin: 0;
 }
 
-	
-
-
 .advantages .list-item {
 	width: 270px;
 }
-
 .advantages-list:not(:last-child) {
 	margin-right: 30px;
 }
 
-  /* Блок Work  */
+  /* Чем мы занимаемся (блок Work) */
 .work {
 	margin-bottom: 94px;
 }
@@ -706,7 +673,6 @@ textarea{
 	display: flex;
 	justify-content: center;
 }
-
 
 .work .list > .item:not(:last-child) {
 	margin-right: 30px;
@@ -732,7 +698,7 @@ textarea{
     background-color: rgba(47, 48, 58, 0.8)
 }
 
-  /* Блок Каманда */
+/* Команада и социальные страницы*/
 
 .social-list{
 	display: flex;
@@ -753,19 +719,13 @@ textarea{
 	height: 44px;
 	border-radius: 50%;
 
-
-	transition-property: background-color, fill; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-	
+    transition: fill, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 20px;
-	height: 20px;
 	
 }
 
@@ -773,13 +733,11 @@ textarea{
 .social-link:focus{
 	background-color: #2196f3;
 	fill:  #ffffff;
-
 }
 
 .team {
 	padding-top: 94px;
 	padding-bottom: 94px;
-
 	background-color: var(--secondary-bg-color);
 }
 
@@ -858,10 +816,8 @@ textarea{
 	width: "170px";
 	height: "92px";
 	flex-Shrink: 0;
-
-	}
+}
 	
-
 
 
 .icons-link{
@@ -870,14 +826,15 @@ textarea{
 	justify-content: center;
 	padding: 16px 32px;
 	fill:#AFB1B8;
+	
 	width: 170px;
 	height: 92px;
 	border-radius: 4px 4px;
 	border: 1px solid #AFB1B8;
-	
-	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	
+
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .svg{
 	display: flex;
@@ -887,7 +844,6 @@ textarea{
 	height: 60px;
 }
 
-
 .icons-link:hover,
 .icons-link:focus{
 	fill: #2196F3;
@@ -895,7 +851,7 @@ textarea{
 }
 
 
-/* Футер */
+/* Футер сайта */
 .footer .container{
 	margin-right: auto;
 	margin-left: auto;
@@ -928,9 +884,7 @@ textarea{
 	display: inline-block;
 	margin-top: 9px;
 
-	transition-property: color; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-list{
 	padding-left: 0;}
@@ -946,14 +900,15 @@ textarea{
 	margin-top: 20px;
 	text-decoration: none;
 
-	transition-property: color; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-text:hover,
 .address-text:focus{
 	color: var(--accent-color);
 }
+
+
+/* Окно ссылок для пользователя*/
 
 .box-adress{
 	display: block;
@@ -990,9 +945,7 @@ textarea{
 	height: 44px;
 	border-radius: 50%;
 	
-	transition-property: background-color; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	
 }
 
@@ -1000,8 +953,6 @@ textarea{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 20px;
-	height: 20px;
 }
 
 .footer-link:hover,
@@ -1010,8 +961,13 @@ textarea{
 	fill:  #ffffff;
 }
 
+.modal-consent{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-/*subscribe*/
+/* Подписка пользователя (subscribe) */
 
 b{
 	margin: 0;
@@ -1045,13 +1001,13 @@ b{
 	text-decoration: none;
 	text-align: center;
 	letter-spacing: 0.06em;
+
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 20ms;
 }
 .link-button:hover{
 
 	transform: scale(1.02);
 }
-
 
 .subscribe {
 	margin-left: auto;
@@ -1073,7 +1029,6 @@ b{
 	flex-direction: row;
 	
 }
-
 .footer-form input[type='email'] {
 	min-width: 358px;
 	height: 50px;
@@ -1091,7 +1046,6 @@ b{
 	line-height: 1.87;
 	color: rgba(255, 255, 255, 0.6);
 }
-
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -1102,11 +1056,13 @@ b{
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-  /* Портфолио */
+
+ /* Портфолио */
+
 .galerry-card:hover,
 .galerry-card:focus-within{
-	transform: scale(1.02);
-    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)
+    transform: scale(1.02);
+	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)
 }
 
 .galerry {
@@ -1140,9 +1096,9 @@ b{
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.63;
-    transition-property: color, background-color, box-shadow;
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+
+
+	transition: color, background-color, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -1154,7 +1110,7 @@ b{
 	
 }
 
-  /* Карты галереи */
+/* Карты галереи */
 
 .galerry-card-thumb {
 	position: relative;
@@ -1171,11 +1127,12 @@ b{
 	height: 100%;
 	padding: 63px 24px;
 	background-color: rgba(33, 150, 243, 0.9);
+
 	transform: translateY(100%);
 	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 }
-.galerry-card-thumb:hover .galerry-card-info,
-.galerry-card-thumb:focus-within .galerry-card-info {
+.galerry-card:hover .galerry-card-info,
+.galerry-card:focus-within .galerry-card-info {
 	transform: translateY(0);
 }
 
@@ -1196,10 +1153,8 @@ b{
 	font-size: 16px;
 	line-height: 1.88;
 	overflow: hidden;
+    transition: ox-shadow, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-	transition-property: box-shadow, transform; 
-	transition-duration: 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
